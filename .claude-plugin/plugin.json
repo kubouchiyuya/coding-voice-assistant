@@ -1,0 +1,14 @@
+{
+  "name": "coding-voice-assistant",
+  "version": "1.0.0",
+  "description": "Coding Voice Assistant - 音声ガイド付きフルサイクル・コーディングアシスタント。合議エージェント5体 + 実行エージェント7体 + 8スキルで非エンジニアからプロまで対応。",
+  "author": {
+    "name": "kubouchiyuya"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kubouchiyuya/coding-voice-assistant"
+  },
+  "keywords": ["coding", "voice", "assistant", "voicevox", "agent", "design", "review", "test"]
+}
