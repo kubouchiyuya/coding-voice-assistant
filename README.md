@@ -1,156 +1,82 @@
 # coding-voice-assistant
 
-> ⭐ **クローン（ダウンロード）してくれた方へ**: このツールが役立ったら、ぜひ上の「Star」ボタンを押してください！あなたのスターが開発の励みになります！
+<div align="center">
 
-> 💡 **エンジニア以外の方へ**: このツールは専門知識がなくても使えるよう設計されています。
-> 初回起動時に音声で使い方を案内します。用語がわからない場合は「用語説明モード」（デフォルトON）が自動的に説明します。
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,30&height=200&section=header&text=coding-voice-assistant&fontSize=36&fontColor=fff&animation=fadeIn&desc=Voice-Guided%20Full-Cycle%20Coding%20Assistant%20(Plugin%20Edition)&descSize=18&descAlignY=70" width="100%"/>
 
-> 🎙️ **VS Code拡張機能について**: このリポジトリをクローン（ダウンロード）すると、**VS Code拡張機能も自動的に含まれます**。
-> 音声通知機能はVS Codeの拡張機能としても動作するため、エディタから直接ON/OFFできます。
-> オンライン会議中は設定パネル（`./scripts/settings.sh`）から音声をOFFにできます。
+<img src="https://raw.githubusercontent.com/kubouchiyuya/kubouchiyuya/main/avatar.jpg" width="120" style="border-radius:50%; margin-top:16px"/>
 
----
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=22&duration=3000&pause=1000&color=F97316&center=true&vCenter=true&multiline=true&width=900&height=140&lines=Plugin-Based+%F0%9F%94%8C;No+MCP+Required;Voice+%2B+AI+Coding)](https://github.com/DenverCoder1/readme-typing-svg)
 
-## このツールでできること（1分でわかる）
+[![GitHub](https://img.shields.io/badge/GitHub-kubouchiyuya-181717?style=for-the-badge&logo=github)](https://github.com/kubouchiyuya)
+[![LP](https://img.shields.io/badge/Consulting%20LP-F97316?style=for-the-badge&logo=vercel&logoColor=white)](https://consulting-payment-tool.vercel.app)
 
-コーディング中のAI（Claude Code）が作業完了・エラー発生・確認が必要なとき、**声でお知らせ**してくれるアシスタントツールです。
-
-- パソコンから離れていても、声で知らせてくれます
-- ずんだもんや春日部つむぎなど100以上のキャラクターの声が使えます（無料）
-- エンジニア向けの専門用語を、わかりやすい言葉で説明してくれる機能付き
-- プラグイン形式で Claude Code に統合できます
+</div>
 
 ---
 
-## VS Code拡張機能について
+## What This Does
 
-このリポジトリをクローン（ダウンロード）すると、**VS Code拡張機能も自動的に含まれます**。
-音声通知機能はVS Codeの拡張機能としても動作するため、エディタから直接ON/OFFできます。
+This is the plugin edition of the voice-guided coding assistant. It gives Claude Code voice-aware feedback without requiring a separate MCP server.
 
-例: オンライン会議中は音声をオフ → 終わったらオン
+The design goal is simple: keep the workflow light, reduce setup friction, and still let the assistant speak when it matters.
 
 ---
 
-## はじめかた（初心者向け）
+## ✨ Features
 
-### ステップ1: リポジトリをダウンロード（クローン）する
+| Feature | Description |
+|---|---|
+| Plugin workflow | Hooks-based integration with Claude Code |
+| No MCP required | Smaller operational footprint |
+| Voice guidance | Spoken prompts and updates |
+| Non-engineer friendly | Clear setup steps and plain-language explanations |
+| Local-first | Can run with local voice tooling |
+
+---
+
+## 🚀 Quick Start
 
 ```bash
-# 1. Star を押す（上の ☆ ボタン）
-# 2. 好きなフォルダに移動（例: ~/Projects）
 cd ~/Projects
-
-# 3. ダウンロード（クローン）
 git clone https://github.com/kubouchiyuya/coding-voice-assistant.git
-
-# 4. フォルダに入る
 cd coding-voice-assistant
-```
-
-### ステップ2: 音声エンジンをインストールする
-
-VOICEVOX（無料）をおすすめします。
-
-- https://voicevox.hiroshiba.jp/ からダウンロードしてインストール
-- インストール後、アプリを起動したままにする
-
-### ステップ3: 設定する
-
-```bash
-./scripts/settings.sh
-```
-
-メニューが表示されるので、好みの声やキャラクターを選べます。
-
----
-
-## 音声・設定のカスタマイズ
-
-| 設定項目 | 説明 |
-|---------|------|
-| 音量 | 0.1〜1.0 で調整（デフォルト: 0.3）|
-| 速度 | 0.5〜2.0 で調整（デフォルト: 1.3）|
-| キャラクター | ずんだもん、春日部つむぎ等100+体から選択 |
-| 言語 | 日本語（ja）/ 英語（en）|
-| 用語説明 | ON（デフォルト）/ OFF |
-
-設定パネルの開き方: `./scripts/settings.sh`
-
-オンライン会議中に使う場合: 設定パネルから「1) 音声 OFF」に設定できます。
-
----
-
-## 用語説明モードについて
-
-初期設定では「用語説明モード」がONになっており、専門用語が出てきた際に音声で説明します。
-
-例: 「MCPとは：AIツール連携の仕組み」「コミットとは：変更を保存すること」を音声で説明
-
-不要な場合は `./scripts/settings.sh` から「6) 用語説明 OFF」にできます。
-
----
-
-## 言語設定
-
-日本語・英語の切り替えが可能です。デフォルトは日本語です。
-
-```bash
-./scripts/notify.sh set-lang en   # 英語に切り替え
-./scripts/notify.sh set-lang ja   # 日本語に戻す
-```
-
-または設定パネル `./scripts/settings.sh` の「5) 言語設定」から変更できます。
-
----
-
-## よく使うコマンド
-
-```bash
-# 声で読み上げ
-./scripts/notify.sh "メッセージ"
-
-# 音声 ON/OFF
-./scripts/notify.sh on
-./scripts/notify.sh off
-
-# キャラクター変更
-./scripts/notify.sh set-speaker 3  # ずんだもん（ノーマル）
-
-# 設定パネル
 ./scripts/settings.sh
 ```
 
 ---
 
-## よくある質問
+## 🏗️ Architecture
 
-**Q: VOICEVOXって何ですか？**
-A: 無料で使える音声合成ソフトです。ずんだもん、春日部つむぎなど人気キャラクターの声で読み上げができます。APIキーや登録は不要です。
-
-**Q: エンジニアじゃなくても使えますか？**
-A: はい。用語説明モード（デフォルトON）がわからない言葉を音声で説明します。
-
-**Q: 会議中に音声が鳴ってしまいそうで心配です**
-A: `./scripts/settings.sh` から「1) 音声 OFF」に設定することで、音声を完全にオフにできます。
-
-**Q: MCP版との違いは？**
-A: こちらはプラグイン（plugin）形式で動作するため、MCP サーバーを別途起動しなくても使えます。コンテキストの消費がゼロです。
+```mermaid
+graph TD
+    Plugin[Claude Code Plugin] --> Hooks[Hooks]
+    Hooks --> Notify[scripts/notify.sh]
+    Notify --> Voice[Voice Engine]
+    Voice --> Agents[Assistant Agents]
+    Agents --> Plugin
+```
 
 ---
 
-## 対応プラットフォーム
+## 🛠️ Tech Stack
 
-- macOS（推奨）
-- Linux（paplay / aplay 対応）
-- Windows（`scripts/notify.ps1` 使用）
-
----
-
-## ライセンス
-
-MIT
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![VOICEVOX](https://img.shields.io/badge/VOICEVOX-Free-brightgreen?style=for-the-badge)
+![Claude%20Code](https://img.shields.io/badge/Claude%20Code-Plugin-F97316?style=for-the-badge)
 
 ---
 
-VOICEVOX のキャラクターボイスは各キャラクターの利用規約に従ってください。
-商用利用時は各キャラクターの利用規約を確認してください。
+## 👤 Author
+
+<div align="center">
+
+| | |
+|---|---|
+| **Yuya Kubouchi (MASA2 / MASA Sub)** | Beauty Salon Owner → AI Architect |
+| Location | Osaka, Japan |
+| System | AKATSUKI / Miyabi Society |
+| Identity | AI × Beauty Industry × Non-Engineer |
+
+</div>
